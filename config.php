@@ -6,7 +6,7 @@
  */
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', '');              // Euer MySQL-Passwort
+define('DB_PASS', 'root');              // Euer MySQL-Passwort
 define('DB_NAME', 'portfolio_db');
 define('DB_PORT', 3306);            // Standard MySQL Port
 

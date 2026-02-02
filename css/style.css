@@ -2,13 +2,13 @@
 
 :root {
     /* Farben - Könnt ihr nach eurem Design-Konzept ändern */
-    --primary-color: #2563EB;
-    --secondary-color: #1F2937;
-    --accent-color: #F59E0B;
-    --background: #F9FAFB;
-    --text-color: #1F2937;
-    --text-light: #6B7280;
-    --border-color: #E5E7EB;
+    --primary-color: #0c3387;
+    --secondary-color: #30127d;
+    --accent-color: #6B7280;
+    --background: #000000;
+    --text-color: #ffffff;
+    --text-light: #8f9196;
+    --border-color: #5a73a5;
 
     --spacing-unit: 1rem;
 
