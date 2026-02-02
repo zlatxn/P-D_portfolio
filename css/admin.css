@@ -1,0 +1,163 @@
+/* ==================== ADMIN CONTAINER ==================== */
+
+.admin-container {
+    background: #f9fafb;
+    padding: 2rem var(--spacing-unit);
+    min-height: calc(100vh - 200px);
+}
+
+.admin-container h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+/* ==================== PROJECTS TABELLE ==================== */
+
+.projects-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.projects-table thead {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.projects-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.projects-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.projects-table tr:hover {
+    background-color: #f3f4f6;
+}
+
+.projects-table .title {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.projects-table .description {
+    color: var(--text-light);
+    max-width: 200px;
+}
+
+.projects-table .image {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.projects-table .actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* ==================== FORMULAR STYLE ==================== */
+
+.form-container {
+    background: white;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ==================== RESPONSIVE TABLE ==================== */
+
+@media (max-width: 768px) {
+    .projects-table {
+        font-size: 0.9rem;
+    }
+
+    .projects-table th,
+    .projects-table td {
+        padding: 0.75rem;
+    }
+
+    .projects-table .description {
+        display: none;
+    }
+
+    .projects-table .actions {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .projects-table .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .form-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+}
