@@ -4,7 +4,7 @@
  * DATENBANK CREDENTIALS
  * Diese Werte müssen evtl. angepasst werden
  */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'db');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');              // Euer MySQL-Passwort
 define('DB_NAME', 'portfolio_db');
@@ -13,6 +13,8 @@ define('DB_PORT', 3306);            // Standard MySQL Port
 // SESSION STARTEN
 // Hier gestartet und auf allen Seiten eingebunden
 session_start();
+include 'views/header.php';
+include 'views/footer.php';
 
 // FEHLERBEHANDLUNG
 // Für uns in der Entwicklung

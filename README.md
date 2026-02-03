@@ -17,7 +17,7 @@
 - Projekte löschen (DELETE)
 - Finales Testing & Deployment
 
----
+
 
 ### 1. Konfiguration anpassen
 
@@ -81,23 +81,23 @@ portfolio/
 ### Aufgaben für Teams:
 
 **Phase 1: Design-Konzept**
-- [ ] Zielgruppe definieren (Wer schaut die Website an?)
-- [ ] Farbschema aussuchen (3 Hauptfarben + Akzent)
-- [ ] Layout-Skizze zeichnen
-- [ ] Typografie planen
-- [ ] Design-Document schreiben
+- [x] Zielgruppe definieren (Wer schaut die Website an?)
+- [x] Farbschema aussuchen (3 Hauptfarben + Akzent)
+- [x] Layout-Skizze zeichnen
+- [x] Typografie planen
+- [x] Design-Document schreiben
 
 **Phase 2: Homepage coden**
-- [ ] HTML in views/home.php schreiben
-- [ ] CSS in css/style.css anpassen
-- [ ] Eigene Farben & Fonts einbinden
+- [x] HTML in views/home.php schreiben
+- [] CSS in css/style.css anpassen
+- [x] Eigene Farben & Fonts einbinden
 - [ ] Responsive Design machen
 
 **Phase 3: Git & Code-Struktur**
-- [ ] GitHub/GitLab Repo erstellen
-- [ ] Alle Dateien in Repo pushen
-- [ ] Team-Mitglieder hinzufügen
-- [ ] Erstes Commit machen
+- [x] GitHub/GitLab Repo erstellen
+- [x] Alle Dateien in Repo pushen
+- [x] Team-Mitglieder hinzufügen
+- [x] Erstes Commit machen
 
 **Phase 4: Polish**
 - [ ] Mobile-Test
@@ -128,8 +128,8 @@ CREATE TABLE projects (
 ```
 
 **Phase 2: Datenbank aufsetzen**
-- [ ] phpMyAdmin öffnen
-- [ ] setup.sql ausführen
+- [x] phpMyAdmin öffnen
+- [x] setup.sql ausführen
 - [ ] Test-Daten einfügen
 - [ ] Query-Tests machen
 
