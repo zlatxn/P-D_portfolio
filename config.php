@@ -13,8 +13,7 @@ define('DB_PORT', 3306);            // Standard MySQL Port
 // SESSION STARTEN
 // Hier gestartet und auf allen Seiten eingebunden
 session_start();
-include 'views/header.php';
-include 'views/footer.php';
+
 
 // FEHLERBEHANDLUNG
 // Für uns in der Entwicklung
