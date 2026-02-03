@@ -62,7 +62,6 @@ switch ($page) {
         $view = 'views/home.php';
 }
 include 'views/header.php';
-include 'views/footer.php';
 
 // VIEW LADEN
 if (file_exists($view)) {
@@ -70,3 +69,5 @@ if (file_exists($view)) {
 } else {
     echo "Fehler: View nicht gefunden: " . htmlspecialchars($view);
 }
+
+include 'views/footer.php';
