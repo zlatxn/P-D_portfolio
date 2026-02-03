@@ -1,14 +1,14 @@
 /* ==================== VARIABLEN ==================== */
 
 :root {
-    /* Farben - Könnt ihr nach eurem Design-Konzept ändern */
-    --primary-color: #0c3387;
-    --secondary-color: #30127d;
-    --accent-color: #6B7280;
-    --background: #000000;
-    --text-color: #ffffff;
-    --text-light: #8f9196;
-    --border-color: #5a73a5;
+    /* Farben */
+    --primary-color: #4A90E2; 
+    --secondary-color: #503E9D; 
+    --accent-color: #4FC3F7; 
+    --background: #121212; 
+    --text-color: #E0E0E0; 
+    --text-light: #B0B0B0; 
+    --border-color: #444444; 
 
     --spacing-unit: 1rem;
 
@@ -41,12 +41,12 @@ body {
 /* ==================== HEADER ==================== */
 
 .header {
-    background: white;
+    background: var(--background); 
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -63,7 +63,7 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--primary-color); 
 }
 
 .nav-links {
@@ -74,15 +74,15 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--text-color); 
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
+    color: var(--accent-color); 
+    border-bottom: 2px solid var(--accent-color);
 }
 
 /* ==================== FOOTER ==================== */
@@ -117,19 +117,29 @@ body {
 /* ==================== HERO SECTION ==================== */
 
 .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid; /* Diese Zeile entfernen */
+    /* grid-template-columns: 1fr 1fr; /* Diese Zeile entfernen */
     gap: 2rem;
     align-items: center;
     padding: 4rem var(--spacing-unit);
-    max-width: 1200px;
+    max-width: 800px; /* Hier vielleicht etwas schmaler machen */
     margin: 0 auto;
+    text-align: center; /* Alles zentrieren */
+}
+
+/* Und das Bild auch zentrieren, falls es noch links war */
+.hero-image img {
+    margin: 1rem auto;
+
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     line-height: 1.2;
+    color: var(--primary-color); 
 }
 
 .hero .subtitle {
@@ -138,10 +148,20 @@ body {
     margin-bottom: 2rem;
 }
 
-.hero-image img {
+.profile-img {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
+}
+
+.hero-image img {
+    max-width: 500px; /* Du kannst diesen Wert anpassen (z.B. 300px, 400px) */
+    height: auto; /* Behält das Seitenverhältnis bei */
+    display: block; 
+    margin-top: 1rem;
+    border-radius: 8px;
+    /* Optional: Fügt einen Schatten hinzu */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
 }
 
 /* ==================== BUTTONS ==================== */
@@ -164,9 +184,9 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #1d4ed8;
+    background-color: #6FA8E8; 
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
 }
 
 .btn-secondary {
@@ -175,7 +195,7 @@ body {
 }
 
 .btn-secondary:hover {
-    background-color: #111827;
+    background-color: #6B5B9D; 
 }
 
 .btn-lg {
@@ -200,7 +220,7 @@ body {
 /* ==================== ABOUT SECTION ==================== */
 
 .about {
-    background: white;
+    background: var(--secondary-color); 
     padding: 4rem var(--spacing-unit);
 }
 
@@ -208,6 +228,7 @@ body {
 .featured h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: var(--primary-color); 
 }
 
 .about p {
@@ -243,6 +264,7 @@ body {
 
 .featured {
     padding: 4rem var(--spacing-unit);
+    background: var(--background); 
 }
 
 /* ==================== PROJECTS GRID ==================== */
@@ -255,16 +277,16 @@ body {
 }
 
 .project-card {
-    background: white;
+    background: var(--secondary-color); 
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .project-image {
@@ -291,6 +313,7 @@ body {
 .project-content h2 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
+    color: var(--primary-color); 
 }
 
 .project-content p {
@@ -310,14 +333,14 @@ body {
 }
 
 .alert-success {
-    background-color: #D1FAE5;
-    color: #065F46;
+    background-color: #065F46; 
+    color: #D1FAE5; 
     border: 1px solid #A7F3D0;
 }
 
 .alert-error {
-    background-color: #FEE2E2;
-    color: #991B1B;
+    background-color: #991B1B;
+    color: #FEE2E2; 
     border: 1px solid #FECACA;
 }
 
@@ -326,7 +349,7 @@ body {
 .empty-state {
     text-align: center;
     padding: 3rem;
-    background: white;
+    background: var(--secondary-color);
     border-radius: 8px;
 }
 
