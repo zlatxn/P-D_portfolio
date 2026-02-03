@@ -1,11 +1,12 @@
 <?php
+$isAdmin = false;
 
 /**
  * INDEX.PHP - ROUTER
  * 
  * Der zentrale Einstiegspunkt
  * Leitet alle Anfragen an die richtige Controller-Methode
- */
+*/
 require_once 'config.php';
 require_once 'controllers/ProjectController.php';
 
@@ -17,6 +18,7 @@ $controller = new ProjectController($db);
 
 // Bestimme welche View geladen wird
 $view = '';
+
 
 switch ($page) {
     case 'projects':
@@ -35,18 +37,21 @@ switch ($page) {
         // Admin Dashboard mit allen Projekten
         $pageTitle = 'Admin';
         $view = $controller->admin();
+        $isAdmin = true;
         break;
 
     case 'create':
         // Neues Projekt erstellen
         $pageTitle = 'Projekt Erstellen';
         $view = $controller->create();
+        $isAdmin = true;
         break;
 
     case 'edit':
         // Projekt bearbeiten
         $pageTitle = 'Projekt Bearbeiten';
         $view = $controller->edit();
+        $isAdmin = true;
         break;
 
     case 'delete':

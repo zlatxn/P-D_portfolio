@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title><?php echo isset ($pageTitle) ? $pageTitle : 'Portfolio by Daniela und Patryk'; ?>
-
+    <title><?php echo isset($pageTitle) ? $pageTitle : 'Portfolio by Daniela und Patryk'; ?>
     </title>
+    <link rel="stylesheet" href="css/style.css">
+    <?php echo $isAdmin ? "<link rel='stylesheet' href='css/admin.css'>" : "" ; ?>
 </head>
 
 <body>
