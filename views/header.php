@@ -16,8 +16,8 @@
             <div class="logo">Portfolio</div>
             <ul class="nav-links">
                 <li><a href="index.php" class="active">Home</a></li>
-                <li><a href="index.php?page=projects">Projekte</a></li>
-                <li><a href="index.php?page=admin">Admin</a></li>
+                <li><a href="index.php?page=projects" class="active">Projekte</a></li>
+                <li><a href="index.php?page=admin" class="active">Admin</a></li>
             </ul>
 
         </nav>
