@@ -321,28 +321,89 @@ body {
     margin-bottom: 1rem;
     font-size: 0.95rem;
 }
+/* ======== Project-Detail.php ======= */
+/* =========================================
+   PROJEKT DETAIL SEITE (project-detail.php)
+   ========================================= */
 
-
-
-/* ==================== ALERTS ==================== */
-
-.alert {
-    padding: 1rem;
-    border-radius: 6px;
-    margin-bottom: 1rem;
+/* 1. Der Haupt-Container für Abstand nach oben/unten */
+.project-detail-page {
+    padding: 60px 0; /* Gibt der Seite Luft zum Atmen */
+    background-color: var(--background) /* Falls der Hintergrund nicht eh schon weiß ist */
 }
 
-.alert-success {
-    background-color: #065F46; 
-    color: #D1FAE5; 
-    border: 1px solid #A7F3D0;
+/* 2. Der Zurück-Button Bereich */
+.action-bar {
+    margin-bottom: 30px; /* Abstand zwischen Button und Titel */
 }
 
-.alert-error {
-    background-color: #991B1B;
-    color: #FEE2E2; 
-    border: 1px solid #FECACA;
+/* Falls du btn-secondary noch nicht gestylt hast: */
+.btn-secondary {
+    background-color: var(--background);
+    color: var(--border-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    display: inline-block;
 }
+
+.btn-secondary:hover {
+    background-color: var(--accent-color); /* Etwas dunkler beim Drüberfahren */
+    color: var(--primary-color);
+}
+
+/* 3. Der Header (Titel & Datum) */
+.detail-header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee; /* Eine feine Linie unter dem Titel */
+    padding-bottom: 20px;
+    text-align: left; /* Oder center, wenn du es mittig willst */
+}
+
+.detail-header h1 {
+    font-size: 2.5rem; /* Große, plakative Überschrift */
+    margin: 0 0 10px 0;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.meta-info small {
+    color: var(--text-light);       /* Datum in dezentem Grau */
+    font-size: 0.95rem;
+    font-style: normal; /* Oder 'italic' wenn du es kursiv magst */
+    display: block;     /* Damit es sicher in einer neuen Zeile steht */
+}
+
+/* 4. Das Bild */
+.detail-image {
+    width: 100%;
+    margin-bottom: 40px; /* Viel Platz zum Text lassen */
+    border-radius: 8px;  /* Leicht abgerundete Ecken wirken moderner */
+    overflow: hidden;    /* Wichtig für die runden Ecken */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Ein ganz weicher Schatten */
+}
+
+.detail-image img {
+    width: 100%;
+    height: auto;        /* Verhältnismäßig skalieren */
+    max-height: 600px;   /* Verhindert, dass Hochformat-Bilder riesig werden */
+    object-fit: cover;   /* Schneidet Ränder ab, falls max-height greift */
+    display: block;      /* Entfernt Lücken unter dem Bild */
+}
+
+/* 5. Die Beschreibung (Text) */
+.detail-description {
+    font-size: 1.15rem;  /* Etwas größer als normaler Text (besser lesbar) */
+    line-height: 1.8;    /* WICHTIG: Viel Zeilenabstand für Lesbarkeit */
+    color: var(--text-light);         /* Kein hartes Schwarz, sondern dunkles Grau */
+    
+    /* Optional: Textbreite begrenzen für bessere Lesbarkeit (wie in Büchern) */
+    max-width: 800px;    
+    margin-right: auto;  /* Falls max-width aktiv ist: Linksbündig lassen... */
+    /* margin-left: auto;   ...oder mit 'margin: 0 auto' zentrieren */
+}
+
 
 /* ==================== EMPTY STATE ==================== */
 
@@ -357,6 +418,7 @@ body {
     color: var(--text-light);
     margin-bottom: 1rem;
 }
+
 
 /* ==================== RESPONSIVE ==================== */
 

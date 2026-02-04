@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <footer>
     <header class="header">
         <nav class="nav">
             <div class="logo">Portfolio</div>
@@ -19,6 +20,6 @@
                 <li><a href="index.php?page=projects" class="active">Projekte</a></li>
                 <li><a href="index.php?page=admin" class="active">Admin</a></li>
             </ul>
-
+            
         </nav>
     </header>
