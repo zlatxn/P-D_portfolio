@@ -7,11 +7,10 @@
     <title><?php echo isset($pageTitle) ? $pageTitle : 'Portfolio by Daniela und Patryk'; ?>
     </title>
     <link rel="stylesheet" href="css/style.css">
-    <?php echo $isAdmin ? "<link rel='stylesheet' href='css/admin.css'>" : "" ; ?>
+    <?php echo $isAdmin ? "<link rel='stylesheet' href='css/admin.css'>" : ""; ?>
 </head>
 
 <body>
-    <footer>
     <header class="header">
         <nav class="nav">
             <div class="logo">Portfolio</div>
@@ -20,6 +19,6 @@
                 <li><a href="index.php?page=projects" class="active">Projekte</a></li>
                 <li><a href="index.php?page=admin" class="active">Admin</a></li>
             </ul>
-            
+
         </nav>
     </header>
