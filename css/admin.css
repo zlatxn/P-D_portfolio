@@ -1,7 +1,20 @@
 /* ==================== ADMIN CONTAINER ==================== */
-
+:root {
+    /* Modernes Deep Dark Theme */
+    --primary-color: #6366f1;    /* Indigo-Vibe (moderner als Standard-Blau) */
+    --secondary-color: #1e1e2e;  /* Sanfteres Dunkelblau-Schwarz */
+    --accent-color: #00d2ff;     /* Cyan Glow */
+    --background: #0f172a;       /* Slate-Farben wirken hochwertiger */
+    --text-color: #f1f5f9; 
+    --text-light: #94a3b8; 
+    --border-color: rgba(255, 255, 255, 0.1); 
+    
+    --spacing-unit: 1.5rem;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --glass: rgba(255, 255, 255, 0.03);
+}
 .admin-container {
-    background: #f9fafb;
+    background: var(--background);
     padding: 2rem var(--spacing-unit);
     min-height: calc(100vh - 200px);
 }
@@ -16,7 +29,7 @@
 .projects-table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
+    background: var(--secondary-color);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -24,8 +37,8 @@
 }
 
 .projects-table thead {
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: var(--background);
+    color: var(--text-color);
 }
 
 .projects-table th {
@@ -40,7 +53,7 @@
 }
 
 .projects-table tr:hover {
-    background-color: #f3f4f6;
+    background-color: var(--border-color);
 }
 
 .projects-table .title {
@@ -89,7 +102,6 @@
     background-color: #dc2626; /* Dunkleres Rot */
 }
 .projects-table .actions {
-    display: flex;
     gap: 0.5rem;
 }
 

@@ -1,18 +1,18 @@
 /* ==================== VARIABLEN ==================== */
 
 :root {
-    /* Farben */
-    --primary-color: #4A90E2; 
-    --secondary-color: #503E9D; 
-    --accent-color: #4FC3F7; 
-    --background: #121212; 
-    --text-color: #E0E0E0; 
-    --text-light: #B0B0B0; 
-    --border-color: #444444; 
+    /* Modernes Deep Dark Theme */
+    --primary-color: #6366f1;    /* Indigo-Vibe (moderner als Standard-Blau) */
+    --secondary-color: #1e1e2e;  /* Sanfteres Dunkelblau-Schwarz */
+    --accent-color: #00d2ff;     /* Cyan Glow */
+    --background: #0f172a;       /* Slate-Farben wirken hochwertiger */
+    --text-color: #f1f5f9; 
+    --text-light: #94a3b8; 
+    --border-color: rgba(255, 255, 255, 0.1); 
     
-    --spacing-unit: 1rem;
-
-    --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --spacing-unit: 1.5rem;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --glass: rgba(255, 255, 255, 0.03);
 }
 
 * {
@@ -37,7 +37,59 @@ body {
     flex-direction: column;
     margin: 0;
 }
+/* 1. Der äußere Container (der gesamte Abschnitt über die volle Breite) */
+.about-me {
+    padding: 80px 20px; /* Viel Platz oben/unten, etwas Platz an den Seiten */
+    background-color: var(--background); /* Setzt sich leicht vom reinen Weiß ab */
+    display: flex; /* Hilft bei der vertikalen Zentrierung, falls nötig */
+    justify-content: center; /* Zentriert den inneren Container horizontal */
+}
 
+/* 2. Der innere Container (die eigentliche "Karte") */
+.about-me-section {
+    background-color: var(--secondary-color); /* Weißer Hintergrund für den Karten-Look */
+    width: 100%;
+    max-width: 700px; /* Maximale Breite für gute Lesbarkeit */
+    padding: 40px; /* Innenabstand in der Karte */
+    border-radius: 16px; /* Moderne, stark abgerundete Ecken */
+    
+    /* Das Herzstück des "coolen" Looks: Ein weicher, tiefer Schatten */
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+    
+    /* Ein visueller Akzent: Ein farbiger Rand nur oben */
+    border-top: 4px solid var(--text-light);
+    
+    text-align: center; /* Zentriert Überschrift und Text in der Karte */
+    
+    /* Kleine Animation beim Laden (optional, aber cool) */
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional: Ein kleiner Hover-Effekt für die Karte */
+.about-me-section:hover {
+     transform: translateY(-5px); /* Hebt sich leicht an */
+     box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2); /* Schatten wird stärker */
+}
+
+
+/* 3. Die Überschrift stylen */
+.about-me-section h2 {
+    color: var(--text-color);
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    position: relative; /* Nötig für das dekorative Element darunter */
+    display: inline-block; /* Damit der Strich genau so breit ist wie der Text */
+}
+
+
+/* 4. Den Absatz stylen */
+.about-me-section p {
+    color: var(--text-color);
+    font-size: 1.1rem; /* Etwas größer als Standardtext */
+    line-height: 1.8; /* WICHTIG: Hoher Zeilenabstand für gute Lesbarkeit */
+    margin: 0; /* Entfernt Standard-Abstände */
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -47,12 +99,13 @@ body {
 /* ==================== HEADER ==================== */
 
 .header {
-    background: var(--background); 
+    background: rgba(15, 23, 42, 0.8); 
+    backdrop-filter: blur(12px);      
+    -webkit-backdrop-filter: blur(12px); /* Unterstützung für Safari */
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -69,7 +122,8 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color); 
+    color: var(--primary-color);
+    text-decoration: none; /* Falls dein Logo ein Link ist */
 }
 
 .nav-links {
@@ -83,20 +137,39 @@ body {
     color: var(--text-color); 
     font-weight: 500;
     transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--accent-color); 
-    border-bottom: 2px solid var(--accent-color);
+    color: var(--primary-color);
+    border-bottom: none; 
 }
-
 /* ==================== FOOTER ==================== */
 
 footer {
     /* Positionierung */
     margin-top: auto;    /* WICHTIG: Drückt den Footer an den unteren Rand */
     width: 100%;         /* Volle Breite */
+    border-top: 90px solid transparent;
+    background-clip: content-box;
     
     /* Zentrierung des Inhalts */
     text-align: center;  /* Text horizontal mittig */
@@ -138,53 +211,68 @@ footer {
 /* ==================== HERO SECTION ==================== */
 
 .hero {
-    /* display: grid; /* Diese Zeile entfernen */
-    /* grid-template-columns: 1fr 1fr; /* Diese Zeile entfernen */
-    gap: 2rem;
-    align-items: center;
-    padding: 4rem var(--spacing-unit);
-    max-width: 800px; /* Hier vielleicht etwas schmaler machen */
+    /* Zentraler Fokus & Modernes Spacing */
+    padding: 8rem var(--spacing-unit); 
+    max-width: 1000px; /* Etwas breiter für den neuen Look */
     margin: 0 auto;
-    text-align: center; /* Alles zentrieren */
-}
-
-/* Und das Bild auch zentrieren, falls es noch links war */
-.hero-image img {
-    margin: 1rem auto;
-
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
+    text-align: center;
+    
+    /* Subtiler Glow-Effekt im Hintergrund */
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    /* Responsive Schriftgröße: Passt sich zwischen 2.5rem und 4rem an */
+    font-size: clamp(2.5rem, 5vw, 4rem); 
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     margin-bottom: 1rem;
-    line-height: 1.2;
-    color: var(--primary-color); 
+
+    /* Moderner Text-Gradient */
+    background: linear-gradient(to right, #ffffff, var(--primary-color));
+    -webkit-text-fill-color: transparent;
 }
 
 .hero .subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
     color: var(--text-light);
     margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Bild-Styling mit "Floating"-Effekt */
+.hero-image img, 
 .profile-img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
+    max-width: 100%;
+    width: 400px; /* Feste Basisbreite, aber responsiv durch max-width */
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    
+    border-radius: 12px; /* Etwas weichere Ecken */
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    background: var(--glass); /* Glassmorphism-Rahmen */
+    
+    /* Schatten & Animation */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.hero-image img {
-    max-width: 500px; /* Du kannst diesen Wert anpassen (z.B. 300px, 400px) */
-    height: auto; /* Behält das Seitenverhältnis bei */
-    display: block; 
-    margin-top: 1rem;
-    border-radius: 8px;
-    /* Optional: Fügt einen Schatten hinzu */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
+/* Interaktiver Hover für das Bild */
+.hero-image img:hover,
+.profile-img:hover {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 0 25px 50px rgba(99, 102, 241, 0.2);
 }
-
 /* ==================== BUTTONS ==================== */
 
 .btn {
