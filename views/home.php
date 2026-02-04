@@ -8,4 +8,12 @@
             </div>
         </div>
     </section>
+    <section class="about-me">
+        <div class="about-me-section">
+            <h2>Über Mich</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ratione animi necessitatibus exercitationem sunt dolorem?</p>
+            
+        </div>
+
+    </section>
 
