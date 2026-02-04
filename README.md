@@ -89,9 +89,9 @@ portfolio/
 
 **Phase 2: Homepage coden**
 - [x] HTML in views/home.php schreiben
-- [] CSS in css/style.css anpassen
+- [x] CSS in css/style.css anpassen
 - [x] Eigene Farben & Fonts einbinden
-- [ ] Responsive Design machen
+- [x] Responsive Design machen
 
 **Phase 3: Git & Code-Struktur**
 - [x] GitHub/GitLab Repo erstellen
@@ -130,25 +130,25 @@ CREATE TABLE projects (
 **Phase 2: Datenbank aufsetzen**
 - [x] phpMyAdmin öffnen
 - [x] setup.sql ausführen
-- [ ] Test-Daten einfügen
-- [ ] Query-Tests machen
+- [x] Test-Daten einfügen
+- [x] Query-Tests machen
 
 **Phase 3: Model schreiben**
-- [ ] Project.php öffnen
+- [x] Project.php öffnen
 - [ ] getAll() schreiben
 - [ ] getById() schreiben
-- [ ] Mit phpMyAdmin testen
+- [x] Mit phpMyAdmin testen
 
 **Phase 4: Controller & Views**
 - [ ] ProjectController schreiben
-- [ ] views/projects.php coden
-- [ ] views/project-detail.php coden
-- [ ] Links testen
+- [x] views/projects.php coden
+- [x] views/project-detail.php coden
+- [x] Links testen
 - [ ] CSS anpassen
 
 **Phase 5: Integration & Testing**
-- [ ] Homepage Link zu Projekte
-- [ ] Projekte-Seite testen
+- [x] Homepage Link zu Projekte
+- [x] Projekte-Seite testen
 - [ ] Responsive Design
 - [ ] Code Review
 - [ ] Commit & Push
@@ -172,15 +172,15 @@ CREATE TABLE projects (
 - [ ] delete() Methode
 
 **Phase 3: Admin Views (90 Min)**
-- [ ] views/admin/dashboard.php (Tabelle)
-- [ ] views/admin/create.php (Form)
-- [ ] views/admin/edit.php (Form)
-- [ ] CSS für Admin
+- [x] views/admin/dashboard.php (Tabelle)
+- [x] views/admin/create.php (Form)
+- [x] views/admin/edit.php (Form)
+- [x] CSS für Admin
 - [ ] Links testen
 
 **Phase 4: CRUD Testing (60 Min)**
-- [ ] Create: Neues Projekt hinzufügen
-- [ ] Read: Projekte anzeigen
+- [x] Create: Neues Projekt hinzufügen
+- [x] Read: Projekte anzeigen
 - [ ] Update: Projekt bearbeiten
 - [ ] Delete: Projekt löschen
 - [ ] Error-Handling testen
