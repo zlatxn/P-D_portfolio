@@ -36,7 +36,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    row-gap: 60px;
+    /*row-gap: 60px;
 }
 /* 1. Der äußere Container (der gesamte Abschnitt über die volle Breite) */
 .about-me {
