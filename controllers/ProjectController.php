@@ -62,7 +62,10 @@ class ProjectController
         $result = $this->project->getAll();
         $projects = $result['success'] ? $result['data'] : [];
 
-        return 'views/admin/dashboard.php';
+        return [
+            'view' => 'views/admin/dashboard.php',
+            'data' => $projects
+        ];
     }
 
     /**
@@ -94,30 +97,41 @@ class ProjectController
      */
     public function edit()
     {
-        // ID aus URL auslesen
+        // 1. ID prüfen
         $id = $_GET['id'] ?? null;
-
         if (!$id) {
+            $_SESSION['error'] = "Keine ID übergeben!";
             redirect('index.php?page=admin');
         }
 
+        // 2. Speichern (POST)
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Änderungen speichern
+            // ... (Dieser Teil bleibt gleich wie vorher) ...
             $result = $this->project->update($id, $_POST);
-
             if ($result['success']) {
-                $_SESSION['message'] = $result['message'];
+                $_SESSION['message'] = "Gespeichert!";
                 redirect('index.php?page=admin');
             } else {
                 $_SESSION['error'] = $result['message'];
             }
         }
 
-        // Projekt-Daten für Formular laden
+        // 3. Daten laden (GET)
         $result = $this->project->getById($id);
-        $project = $result['success'] ? $result['data'] : null;
 
-        return 'views/admin/edit.php';
+        if ($result['success']) {
+            $projectData = $result['data'];
+        } else {
+            $_SESSION['error'] = "Projekt nicht gefunden!";
+            redirect('index.php?page=admin');
+        }
+
+        // --- HIER IST DIE ÄNDERUNG ---
+        // Wir geben nicht nur den Pfad zurück, sondern auch die Daten!
+        return [
+            'view' => 'views/admin/edit.php',
+            'data' => $projectData
+        ];
     }
 
     /**
@@ -126,23 +140,22 @@ class ProjectController
      */
     public function delete()
     {
-        // ID aus URL auslesen
         $id = $_GET['id'] ?? null;
 
         if (!$id) {
+            $_SESSION['error'] = "Keine ID zum Löschen gefunden.";
             redirect('index.php?page=admin');
         }
 
-        // Projekt löschen
+        // Löschen im Model aufrufen
         $result = $this->project->delete($id);
 
         if ($result['success']) {
-            $_SESSION['message'] = $result['message'];
+            $_SESSION['message'] = "Projekt gelöscht.";
         } else {
-            $_SESSION['error'] = $result['message'];
+            $_SESSION['error'] = "Fehler beim Löschen: " . $result['message'];
         }
 
         redirect('index.php?page=admin');
     }
-   
 }

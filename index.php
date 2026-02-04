@@ -36,7 +36,15 @@ switch ($page) {
     case 'admin':
         // Admin Dashboard mit allen Projekten
         $pageTitle = 'Admin';
-        $view = $controller->admin();
+        $result = $controller->admin();
+        if (is_array($result)) {
+            $view = $result['view'];
+            $projects = $result['data']; // <--- HIER landet die Variable endlich im Dashboard!
+        } else {
+            // Fallback (falls du den Controller noch nicht gespeichert hast)
+            $view = $result;
+            $projects = [];
+        }
         $isAdmin = true;
         break;
 
@@ -50,7 +58,9 @@ switch ($page) {
     case 'edit':
         // Projekt bearbeiten
         $pageTitle = 'Projekt Bearbeiten';
-        $view = $controller->edit();
+        $result = $controller->edit();
+        $view = $result['view'];
+        $project = $result['data'];
         $isAdmin = true;
         break;
 
